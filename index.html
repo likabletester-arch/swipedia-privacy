@@ -1,1 +1,1030 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Swipedia Gizlilik Politikası">
+  <meta name="theme-color" content="#120f0e">
 
+  <title>Gizlilik Politikası | Swipedia</title>
+
+  <style>
+    :root {
+      --bg: #100d0c;
+      --bg-soft: #171210;
+      --card: rgba(37, 28, 24, 0.72);
+      --card-hover: rgba(46, 34, 29, 0.88);
+      --border: rgba(255, 112, 82, 0.14);
+
+      --primary: #ff684f;
+      --primary-light: #ff826d;
+      --primary-dark: #d94d37;
+
+      --text: #f7f3f1;
+      --text-soft: #b8aaa4;
+      --text-muted: #857771;
+
+      --max-width: 920px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      color: var(--text);
+      line-height: 1.75;
+
+      background:
+        radial-gradient(
+          circle at 85% -10%,
+          rgba(255, 104, 79, 0.16),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at -10% 35%,
+          rgba(110, 56, 35, 0.15),
+          transparent 25%
+        ),
+        var(--bg);
+    }
+
+    /* =========================
+       BACKGROUND DECORATION
+    ========================== */
+
+    .background-shape {
+      position: fixed;
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      background: rgba(106, 55, 38, 0.10);
+      filter: blur(2px);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .shape-one {
+      top: -260px;
+      right: -160px;
+    }
+
+    .shape-two {
+      bottom: -330px;
+      left: -250px;
+      width: 600px;
+      height: 600px;
+      background: rgba(255, 104, 79, 0.04);
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+
+    nav {
+      width: 100%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      background: rgba(16, 13, 12, 0.76);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: auto;
+      min-height: 76px;
+      padding: 0 24px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .brand-icon {
+      width: 43px;
+      height: 43px;
+      border-radius: 13px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background:
+        linear-gradient(
+          145deg,
+          #ff755d,
+          #ff5742
+        );
+
+      box-shadow:
+        0 10px 30px rgba(255, 104, 79, 0.18);
+    }
+
+    .sparkles {
+      position: relative;
+      width: 25px;
+      height: 25px;
+    }
+
+    .sparkle {
+      position: absolute;
+      color: white;
+      line-height: 1;
+    }
+
+    .sparkle.big {
+      font-size: 23px;
+      left: 4px;
+      top: 3px;
+    }
+
+    .sparkle.small-one {
+      font-size: 11px;
+      top: -1px;
+      left: 0;
+    }
+
+    .sparkle.small-two {
+      font-size: 9px;
+      right: 0;
+      top: 2px;
+    }
+
+    .brand-name {
+      font-size: 22px;
+      font-weight: 750;
+      letter-spacing: -0.7px;
+    }
+
+    .nav-label {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    /* =========================
+       MAIN
+    ========================== */
+
+    main {
+      max-width: var(--max-width);
+      margin: auto;
+      padding: 80px 24px 90px;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      padding: 30px 0 65px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 8px 13px;
+      border-radius: 999px;
+
+      color: var(--primary-light);
+      background: rgba(255, 104, 79, 0.08);
+      border: 1px solid rgba(255, 104, 79, 0.16);
+
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+
+      margin-bottom: 24px;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 12px rgba(255, 104, 79, 0.8);
+    }
+
+    h1 {
+      max-width: 700px;
+      font-size: clamp(42px, 7vw, 72px);
+      line-height: 1.04;
+      letter-spacing: -3px;
+      font-weight: 800;
+      margin-bottom: 25px;
+    }
+
+    h1 span {
+      color: var(--primary);
+    }
+
+    .hero-description {
+      max-width: 650px;
+      color: var(--text-soft);
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .updated {
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .updated-icon {
+      width: 8px;
+      height: 8px;
+      background: var(--primary);
+      border-radius: 50%;
+    }
+
+    /* =========================
+       INTRO CARD
+    ========================== */
+
+    .intro-card {
+      position: relative;
+      overflow: hidden;
+
+      padding: 30px;
+      margin-bottom: 48px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255, 104, 79, 0.08),
+          rgba(35, 27, 23, 0.75)
+        );
+
+      border: 1px solid rgba(255, 104, 79, 0.16);
+      border-radius: 24px;
+    }
+
+    .intro-card::after {
+      content: "";
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      right: -90px;
+      top: -100px;
+      background: rgba(255, 104, 79, 0.07);
+    }
+
+    .intro-card p {
+      position: relative;
+      z-index: 2;
+      color: #d6cbc6;
+      font-size: 16px;
+    }
+
+    .intro-card strong {
+      color: white;
+    }
+
+    /* =========================
+       SECTIONS
+    ========================== */
+
+    .policy-section {
+      margin-bottom: 18px;
+
+      padding: 32px;
+
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.055);
+      border-radius: 22px;
+
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+    }
+
+    .policy-section:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 104, 79, 0.18);
+      background: var(--card-hover);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: flex-start;
+      gap: 17px;
+      margin-bottom: 18px;
+    }
+
+    .number {
+      flex-shrink: 0;
+
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: rgba(255, 104, 79, 0.10);
+      border: 1px solid rgba(255, 104, 79, 0.15);
+
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: 23px;
+      line-height: 1.35;
+      letter-spacing: -0.6px;
+      font-weight: 720;
+      padding-top: 5px;
+    }
+
+    .policy-section p {
+      color: var(--text-soft);
+      margin-top: 12px;
+    }
+
+    .policy-section strong {
+      color: #eee7e3;
+    }
+
+    ul {
+      list-style: none;
+      margin-top: 18px;
+    }
+
+    li {
+      position: relative;
+      padding-left: 24px;
+      margin: 10px 0;
+      color: var(--text-soft);
+    }
+
+    li::before {
+      content: "";
+      position: absolute;
+      left: 2px;
+      top: 12px;
+
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+
+      background: var(--primary);
+      box-shadow: 0 0 8px rgba(255, 104, 79, 0.25);
+    }
+
+    /* =========================
+       CONTACT
+    ========================== */
+
+    .contact-card {
+      margin-top: 45px;
+      padding: 38px;
+
+      border-radius: 25px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255, 104, 79, 0.14),
+          rgba(45, 29, 23, 0.70)
+        );
+
+      border: 1px solid rgba(255, 104, 79, 0.20);
+    }
+
+    .contact-label {
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      margin-bottom: 10px;
+    }
+
+    .contact-card h2 {
+      font-size: 30px;
+      margin-bottom: 12px;
+      padding: 0;
+    }
+
+    .contact-card p {
+      color: var(--text-soft);
+      margin-bottom: 23px;
+    }
+
+    .email-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      padding: 13px 18px;
+
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 650;
+
+      border-radius: 13px;
+
+      background: var(--primary);
+
+      box-shadow:
+        0 12px 30px rgba(255, 104, 79, 0.16);
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .email-button:hover {
+      transform: translateY(-2px);
+      background: var(--primary-light);
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: auto;
+      padding: 34px 24px 50px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    .footer-brand {
+      color: #d8cfcb;
+      font-weight: 700;
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 650px) {
+      .nav-inner {
+        min-height: 67px;
+        padding: 0 18px;
+      }
+
+      .brand-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 11px;
+      }
+
+      .brand-name {
+        font-size: 19px;
+      }
+
+      .nav-label {
+        display: none;
+      }
+
+      main {
+        padding: 50px 17px 65px;
+      }
+
+      .hero {
+        padding-bottom: 45px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .intro-card {
+        padding: 23px;
+        border-radius: 19px;
+      }
+
+      .policy-section {
+        padding: 23px 20px;
+        border-radius: 18px;
+      }
+
+      .section-heading {
+        gap: 13px;
+      }
+
+      .number {
+        width: 37px;
+        height: 37px;
+        border-radius: 11px;
+      }
+
+      h2 {
+        font-size: 19px;
+        padding-top: 4px;
+      }
+
+      .contact-card {
+        padding: 27px 22px;
+      }
+
+      .contact-card h2 {
+        font-size: 25px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="background-shape shape-one"></div>
+  <div class="background-shape shape-two"></div>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-inner">
+
+      <a href="#" class="brand">
+        <div class="brand-icon">
+          <div class="sparkles">
+            <span class="sparkle big">✦</span>
+            <span class="sparkle small-one">✦</span>
+            <span class="sparkle small-two">✦</span>
+          </div>
+        </div>
+
+        <span class="brand-name">Swipedia</span>
+      </a>
+
+      <span class="nav-label">
+        Gizlilik Politikası
+      </span>
+
+    </div>
+  </nav>
+
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- HERO -->
+    <header class="hero">
+
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        Swipedia • Gizlilik
+      </div>
+
+      <h1>
+        Gizliliğiniz bizim için
+        <span>önemli.</span>
+      </h1>
+
+      <p class="hero-description">
+        Bu Gizlilik Politikası, Swipedia mobil uygulamasını
+        kullanırken bilgilerinizin nasıl toplandığını,
+        kullanıldığını, saklandığını ve gerektiğinde
+        paylaşıldığını açıklar.
+      </p>
+
+      <div class="updated">
+        <span class="updated-icon"></span>
+        Son güncelleme: 6 Ekim 2026
+      </div>
+
+    </header>
+
+
+    <!-- INTRO -->
+    <div class="intro-card">
+      <p>
+        <strong>Swipedia</strong>, kullanıcıların merak ettikleri
+        konuları keşfetmelerini, sorular paylaşmalarını ve toplulukla
+        etkileşim kurmalarını sağlayan sosyal bir bilgi platformudur.
+        Kullanıcı gizliliğini korumak ve verilerin nasıl işlendiği
+        konusunda şeffaf olmak bizim için önemlidir.
+      </p>
+    </div>
+
+
+    <!-- 01 -->
+    <section class="policy-section">
+
+      <div class="section-heading">
+        <div class="number">01</div>
+        <h2>Toplayabileceğimiz Bilgiler</h2>
+      </div>
+
+      <p>
+        Swipedia'nın özelliklerini sunabilmek için kullanıcı
+        tarafından sağlanan veya uygulamanın kullanımı sırasında
+        oluşan bazı bilgiler işlenebilir.
+      </p>
+
+      <ul>
+        <li>
+          <strong>Hesap bilgileri:</strong>
+          Kullanıcı adı, e-posta adresi, telefon numarası
+          (sağlanması halinde), profil fotoğrafı ve kullanıcı
+          tarafından profile eklenen diğer bilgiler.
+        </li>
+
+        <li>
+          <strong>Kullanıcı tarafından oluşturulan içerikler:</strong>
+          Sorular, yorumlar, mesajlar, beğeniler, kaydedilen
+          içerikler ve uygulama içerisinde oluşturulan diğer içerikler.
+        </li>
+
+        <li>
+          <strong>Uygulama kullanım bilgileri:</strong>
+          Uygulamadaki özelliklerle gerçekleştirilen etkileşimler
+          ve hizmetin çalışması için gerekli kullanım bilgileri.
+        </li>
+
+        <li>
+          <strong>Teknik bilgiler:</strong>
+          Uygulamanın güvenliği, performansı ve hata tespiti için
+          gerekli olabilecek cihaz ve uygulama ile ilgili teknik bilgiler.
+        </li>
+      </ul>
+
+    </section>
+
+
+    <!-- 02 -->
+    <section class="policy-section">
+
+      <div class="section-heading">
+        <div class="number">02</div>
+        <h2>Bilgileri Nasıl Kullanıyoruz?</h2>
+      </div>
+
+      <p>
+        İşlenen bilgiler Swipedia hizmetlerinin sağlanması,
+        geliştirilmesi ve güvenliğinin korunması amacıyla kullanılabilir.
+      </p>
+
+      <ul>
+        <li>Swipedia hesabınızı oluşturmak ve yönetmek,</li>
+        <li>uygulamanın temel özelliklerini sağlamak,</li>
+        <li>soru, yorum, beğeni ve mesajlaşma özelliklerini çalıştırmak,</li>
+        <li>kullanıcı deneyimini geliştirmek,</li>
+        <li>uygulamanın güvenliğini sağlamak,</li>
+        <li>spam ve kötüye kullanımı önlemek,</li>
+        <li>şüpheli faaliyetleri tespit etmek,</li>
+        <li>teknik sorunları tespit etmek ve gidermek,</li>
+        <li>kullanıcı destek taleplerini karşılamak.</li>
+      </ul>
+
+    </section>
+
+
+    <!-- 03 -->
+    <section class="policy-section">
+
+      <div class="section-heading">
+        <div class="number">03</div>
+        <h2>Kullanıcı Tarafından Paylaşılan İçerikler</h2>
+      </div>
+
+      <p>
+        Swipedia sosyal özellikler içeren bir platformdur.
+        Kullanıcıların herkese açık olarak yayınladığı sorular,
+        yorumlar, kullanıcı adı, profil fotoğrafı ve benzeri
+        içerikler diğer Swipedia kullanıcıları tarafından
+        görüntülenebilir.
+      </p>
+
+      <p>
+        Kullanıcıların herkese açık alanlarda kişisel veya hassas
+        bilgilerini paylaşmamaları önerilir.
+      </p>
+
+    </section>
+
+
+    <!-- 04 -->
+    <section class="policy-section">
+
+      <div class="section-heading">
+        <div class="number">04</div>
+        <h2>Mesajlaşma</h2>
+      </div>
+
+      <p>
+        Swipedia, kullanıcıların birbirleriyle iletişim kurmasına
+        olanak sağlayan mesajlaşma özellikleri sunabilir.
+      </p>
+
+      <p>
+        Mesajlar; hizmetin sağlanması, güvenliğinin korunması,
+        kötüye kullanımın önlenmesi ve teknik işlevlerin yerine
+        getirilebilmesi için gerekli sistemler aracılığıyla
+        işlenebilir ve saklanabilir.
+      </p>
+
+    </section>
+
+
+    <!-- 05 -->
+    <section class="policy-section">
+
+      <div class="section-heading">
+        <div class="number">05</div>
+        <h2>Verilerin Paylaşılması</h2>
+      </div>
+
+      <p>
+        Swipedia kullanıcıların kişisel bilgilerini üçüncü taraflara
+        satmaz.
+      </p>
+
+      <p>
+        Bununla birlikte uygulamanın çalışmasını sağlayan barındırma,
+        veri tabanı, kimlik doğrulama, güvenlik ve benzeri teknik
+        hizmet sağlayıcılar, hizmetin sağlanması için gerekli olduğu
+        ölçüde belirli verileri işleyebilir.
+      </p>
+
+      <p>
+        Yürürlükteki mevzuatın gerektirdiği durumlarda veya hukuki
+        yükümlülüklerin yerine getirilmesi amacıyla yetkili mercilerle
+        bilgi paylaşılması gerekebilir.
+      </p>
+
+    </section>
+
+
+    <!-- 06 -->
+    <section class="policy-section">
+
+      <div class="section-heading">
+        <div class="number">06</div>
+        <h2>Veri Güvenliği</h2>
+      </div>
+
+      <p>
+        Swipedia, kullanıcı bilgilerinin yetkisiz erişime,
+        değiştirilmesine, açıklanmasına veya imha edilmesine karşı
+        korunması için makul teknik ve organizasyonel güvenlik
+        önlemleri uygulamayı amaçlar.
+      </p>
+
+      <p>
+        Bununla birlikte internet üzerinden gerçekleştirilen hiçbir
+        veri aktarımının veya elektronik veri saklama yönteminin
+        tamamen risksiz olmadığı unutulmamalıdır.
+      </p>
+
+    </section>
+
+
+    <!-- 07 -->
+    <section class="policy-section">
+
+      <div class="section-heading">
+        <div class="number">07</div>
+        <h2>Verilerin Saklanması</h2>
+      </div>
+
+      <p>
+        Kullanıcı verileri, Swipedia hizmetlerinin sağlanması için
+        gerekli olduğu süre boyunca veya yürürlükteki hukuki
+        yükümlülüklerin gerektirdiği süre boyunca saklanabilir.
+      </p>
+
+      <p>
+        Verilerin artık gerekli olmadığı durumlarda, yürürlükteki
+        mevzuat ve teknik gereklilikler doğrultusunda silinmesi veya
+        anonim hale getirilmesi için gerekli işlemler uygulanabilir.
+      </p>
+
+    </section>
+
+
+    <!-- 08 -->
+    <section class="policy-section">
+
+      <div class="section-heading">
+        <div class="number">08</div>
+        <h2>Hesap ve Verilerin Silinmesi</h2>
+      </div>
+
+      <p>
+        Swipedia kullanıcıları, hesaplarının ve hesaplarıyla
+        ilişkili kişisel verilerin silinmesini talep edebilir.
+      </p>
+
+      <p>
+        Hesap ve veri silme talepleri uygulama içerisinde sunulan
+        ilgili seçenekler veya Swipedia'nın resmi iletişim kanalları
+        aracılığıyla iletilebilir.
+      </p>
+
+      <p>
+        Bir silme talebi tamamlandığında; hukuki yükümlülükler,
+        güvenlik, dolandırıcılığın önlenmesi veya uyuşmazlıkların
+        çözümü gibi meşru nedenlerle saklanması gereken bilgiler
+        dışında, ilgili kişisel veriler silinebilir.
+      </p>
+
+    </section>
+
+
+    <!-- 09 -->
+    <section class="policy-section">
+
+      <div class="section-heading">
+        <div class="number">09</div>
+        <h2>Çocukların Gizliliği</h2>
+      </div>
+
+      <p>
+        Swipedia'nın hedef kitlesi Google Play'de belirtilen yaş
+        grupları doğrultusunda belirlenir.
+      </p>
+
+      <p>
+        Çocuklardan kişisel veri işlenmesinin söz konusu olduğu
+        durumlarda yürürlükteki mevzuat, ilgili gizlilik gereklilikleri
+        ve platform politikaları dikkate alınır.
+      </p>
+
+    </section>
+
+
+    <!-- 10 -->
+    <section class="policy-section">
+
+      <div class="section-heading">
+        <div class="number">10</div>
+        <h2>Kullanıcı Hakları</h2>
+      </div>
+
+      <p>
+        Geçerli mevzuat kapsamında kullanıcılar, kendileriyle ilgili
+        kişisel verilere erişme, bu verilerin düzeltilmesini veya
+        silinmesini isteme ve uygun olduğu durumlarda veri işleme
+        faaliyetleri hakkında bilgi talep etme hakkına sahip olabilir.
+      </p>
+
+      <p>
+        Gizlilik ve kişisel verilerle ilgili talepler aşağıda
+        belirtilen iletişim adresine gönderilebilir.
+      </p>
+
+    </section>
+
+
+    <!-- 11 -->
+    <section class="policy-section">
+
+      <div class="section-heading">
+        <div class="number">11</div>
+        <h2>Üçüncü Taraf Hizmetleri</h2>
+      </div>
+
+      <p>
+        Swipedia'nın çalışması için barındırma, kimlik doğrulama,
+        veri tabanı, analiz, hata raporlama veya benzeri teknik
+        hizmetlerden yararlanılabilir.
+      </p>
+
+      <p>
+        Bu hizmet sağlayıcılar yalnızca sundukları hizmetlerin
+        gerektirdiği ölçüde belirli kullanıcı veya teknik verileri
+        işleyebilir.
+      </p>
+
+    </section>
+
+
+    <!-- 12 -->
+    <section class="policy-section">
+
+      <div class="section-heading">
+        <div class="number">12</div>
+        <h2>Gizlilik Politikasındaki Değişiklikler</h2>
+      </div>
+
+      <p>
+        Bu Gizlilik Politikası; Swipedia'nın özelliklerinde,
+        veri işleme uygulamalarında, kullanılan hizmetlerde veya
+        ilgili yasal gerekliliklerde meydana gelen değişikliklere
+        bağlı olarak zaman zaman güncellenebilir.
+      </p>
+
+      <p>
+        Politikanın güncel sürümü bu sayfada yayımlanır ve sayfanın
+        üst bölümünde bulunan "Son güncelleme" tarihi değiştirilir.
+      </p>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact-card">
+
+      <div class="contact-label">
+        İletişim
+      </div>
+
+      <h2>Bir sorunuz mu var?</h2>
+
+      <p>
+        Swipedia'nın Gizlilik Politikası, kişisel veriler veya
+        gizlilik uygulamalarımız hakkında bizimle iletişime
+        geçebilirsiniz.
+      </p>
+
+      <p>
+        <strong>Uygulama:</strong> Swipedia<br>
+        <strong>Geliştirici:</strong> Mustafa Keskin
+      </p>
+
+      <a
+        class="email-button"
+        href="mailto:likabletester@gmail.com"
+      >
+        ✉ likabletester@gmail.com
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+
+      <div>
+        <span class="footer-brand">Swipedia</span>
+        <br>
+        Kaydır. Keşfet. Hatırla.
+      </div>
+
+      <div>
+        © 2026 Swipedia
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
