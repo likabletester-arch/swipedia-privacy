@@ -7,6 +7,7 @@
   <title>Hesap Silme Talebi | Swipedia</title>
 
   <meta
+    id="metaDescription"
     name="description"
     content="Swipedia hesabınızın ve hesabınızla ilişkili verilerin silinmesini talep edin."
   >
@@ -32,6 +33,7 @@
 
     body {
       min-height: 100vh;
+
       background:
         radial-gradient(
           circle at 50% -10%,
@@ -64,6 +66,13 @@
       padding: 42px 0 20px;
     }
 
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
     .brand {
       display: inline-flex;
       align-items: center;
@@ -71,6 +80,7 @@
 
       color: var(--text);
       text-decoration: none;
+
       font-size: 22px;
       font-weight: 800;
       letter-spacing: -0.5px;
@@ -79,24 +89,68 @@
     .logo {
       width: 40px;
       height: 40px;
+
       border-radius: 12px;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
-      background: linear-gradient(
-        135deg,
-        #ff8a70,
-        #ff6049
-      );
+      background:
+        linear-gradient(
+          135deg,
+          #ff8a70,
+          #ff6049
+        );
 
       color: white;
+
       font-weight: 900;
       font-size: 20px;
 
       box-shadow:
         0 8px 30px rgba(255, 118, 95, 0.22);
+    }
+
+    .language-switcher {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      padding: 4px;
+
+      border-radius: 11px;
+
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .lang-button {
+      border: 0;
+      background: transparent;
+
+      color: var(--muted);
+
+      padding: 7px 10px;
+
+      border-radius: 8px;
+
+      cursor: pointer;
+
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 800;
+
+      transition: 0.2s ease;
+    }
+
+    .lang-button:hover {
+      color: white;
+    }
+
+    .lang-button.active {
+      color: white;
+      background: var(--accent);
     }
 
     main {
@@ -113,10 +167,13 @@
       padding: 7px 12px;
       margin-bottom: 18px;
 
-      border: 1px solid rgba(255, 118, 95, 0.25);
+      border:
+        1px solid rgba(255, 118, 95, 0.25);
+
       border-radius: 999px;
 
-      background: rgba(255, 118, 95, 0.08);
+      background:
+        rgba(255, 118, 95, 0.08);
 
       color: var(--accent);
 
@@ -156,7 +213,6 @@
       border-radius: 22px;
 
       padding: 30px;
-
       margin-top: 22px;
 
       box-shadow:
@@ -165,7 +221,9 @@
 
     h2 {
       font-size: 22px;
+
       margin-bottom: 14px;
+
       letter-spacing: -0.4px;
     }
 
@@ -181,6 +239,7 @@
     li {
       padding-left: 8px;
       margin-bottom: 17px;
+
       color: var(--muted);
     }
 
@@ -228,7 +287,9 @@
 
       padding: 18px;
 
-      border: 1px solid rgba(255, 118, 95, 0.18);
+      border:
+        1px solid rgba(255, 118, 95, 0.18);
+
       border-radius: 14px;
 
       background: var(--warning-bg);
@@ -244,7 +305,10 @@
 
     .data-list {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
       gap: 12px;
 
       margin-top: 20px;
@@ -265,15 +329,19 @@
 
     .data-item::before {
       content: "✓";
+
       color: var(--accent);
+
       font-weight: 900;
+
       margin-right: 8px;
     }
 
     footer {
       padding: 30px 0 45px;
 
-      border-top: 1px solid var(--border);
+      border-top:
+        1px solid var(--border);
 
       color: #756d69;
 
@@ -282,9 +350,12 @@
 
     .footer-content {
       display: flex;
+
       justify-content: space-between;
       align-items: center;
+
       gap: 20px;
+
       flex-wrap: wrap;
     }
 
@@ -298,12 +369,27 @@
     }
 
     @media (max-width: 650px) {
+
       .container {
-        width: min(100% - 28px, 900px);
+        width:
+          min(100% - 28px, 900px);
       }
 
       header {
         padding-top: 25px;
+      }
+
+      .header-content {
+        gap: 12px;
+      }
+
+      .brand {
+        font-size: 19px;
+      }
+
+      .logo {
+        width: 37px;
+        height: 37px;
       }
 
       main {
@@ -312,6 +398,7 @@
 
       .card {
         padding: 22px;
+
         border-radius: 18px;
       }
 
@@ -330,100 +417,100 @@
   </style>
 </head>
 
+
 <body>
 
   <header>
-    <div class="container">
+
+    <div class="container header-content">
 
       <a
         class="brand"
         href="https://likabletester-arch.github.io/swipedia-privacy/"
       >
-        <div class="logo">S</div>
+
+        <div class="logo">
+          S
+        </div>
+
         Swipedia
+
       </a>
 
+
+      <div class="language-switcher">
+
+        <button
+          class="lang-button"
+          data-lang="tr"
+          onclick="setLanguage('tr')"
+        >
+          TR
+        </button>
+
+        <button
+          class="lang-button"
+          data-lang="en"
+          onclick="setLanguage('en')"
+        >
+          EN
+        </button>
+
+      </div>
+
     </div>
+
   </header>
 
 
   <main class="container">
 
+
     <section class="hero">
 
-      <div class="badge">
-        HESAP VE VERİ YÖNETİMİ
+      <div
+        class="badge"
+        data-i18n="badge">
       </div>
 
-      <h1>
-        Swipedia hesabınızı silmek mi istiyorsunuz?
-      </h1>
+      <h1 data-i18n="heroTitle"></h1>
 
-      <p>
-        Swipedia kullanıcıları hesaplarının ve hesaplarıyla
-        ilişkili kişisel verilerin silinmesini talep edebilir.
-        Aşağıdaki adımları izleyerek hesap silme talebinizi
-        bize iletebilirsiniz.
-      </p>
+      <p data-i18n="heroDescription"></p>
 
     </section>
 
 
     <section class="card">
 
-      <h2>Hesap silme talebi nasıl gönderilir?</h2>
+      <h2 data-i18n="requestTitle"></h2>
 
-      <p>
-        Hesabınızın size ait olduğunu doğrulayabilmemiz için
-        talebinizi mümkünse Swipedia hesabınızda kullandığınız
-        e-posta adresinden göndermenizi rica ederiz.
-      </p>
+      <p data-i18n="requestDescription"></p>
+
 
       <ol>
 
-        <li>
-          Swipedia hesabınızda kullandığınız
-          <strong>e-posta adresinden</strong>
-          bize e-posta gönderin.
-        </li>
+        <li data-i18n-html="step1"></li>
 
-        <li>
-          E-postanın konu kısmına
-          <strong>“Swipedia Hesap Silme Talebi”</strong>
-          yazın.
-        </li>
+        <li data-i18n-html="step2"></li>
 
-        <li>
-          Mesajınızda Swipedia
-          <strong>kullanıcı adınızı</strong>
-          belirtin.
-        </li>
+        <li data-i18n-html="step3"></li>
 
-        <li>
-          Hesap sahipliği doğrulandıktan sonra
-          hesabınız ve silinmesi gereken ilişkili veriler
-          silme sürecine alınacaktır.
-        </li>
+        <li data-i18n-html="step4"></li>
 
       </ol>
 
 
       <a
+        id="deletionEmailButton"
         class="button"
-        href="mailto:likabletester@gmail.com?subject=Swipedia%20Hesap%20Silme%20Talebi"
-      >
-        Hesap Silme Talebi Gönder
+        href="#"
+        data-i18n="requestButton">
       </a>
 
 
-      <div class="warning">
-
-        <strong>Önemli:</strong>
-
-        Güvenliğiniz için e-posta içerisinde Swipedia
-        şifrenizi veya başka bir hesabınıza ait şifreleri
-        kesinlikle göndermeyin.
-
+      <div
+        class="warning"
+        data-i18n-html="warning">
       </div>
 
     </section>
@@ -431,32 +518,31 @@
 
     <section class="card">
 
-      <h2>Hangi veriler silinebilir?</h2>
+      <h2 data-i18n="dataTitle"></h2>
 
-      <p>
-        Hesap silme işlemi kapsamında hesabınızla
-        ilişkilendirilen veriler, geçerli yasal veya güvenlik
-        amaçlı saklama yükümlülükleri bulunmadığı ölçüde
-        silinebilir.
-      </p>
+      <p data-i18n="dataDescription"></p>
 
 
       <div class="data-list">
 
-        <div class="data-item">
-          Hesap ve profil bilgileri
+        <div
+          class="data-item"
+          data-i18n="data1">
         </div>
 
-        <div class="data-item">
-          Kullanıcı hesabı tanımlayıcıları
+        <div
+          class="data-item"
+          data-i18n="data2">
         </div>
 
-        <div class="data-item">
-          Kullanıcı tarafından oluşturulan içerikler
+        <div
+          class="data-item"
+          data-i18n="data3">
         </div>
 
-        <div class="data-item">
-          Hesapla ilişkilendirilen diğer kullanıcı verileri
+        <div
+          class="data-item"
+          data-i18n="data4">
         </div>
 
       </div>
@@ -466,21 +552,21 @@
 
     <section class="card">
 
-      <h2>İletişim</h2>
+      <h2 data-i18n="contactTitle"></h2>
 
-      <p>
-        Hesap veya veri silme işlemi hakkında sorularınız
-        için bizimle iletişime geçebilirsiniz:
-      </p>
+      <p data-i18n="contactDescription"></p>
 
       <p style="margin-top: 12px;">
+
         <span class="email">
           likabletester@gmail.com
         </span>
+
       </p>
 
-      <p style="margin-top: 8px;">
-        Geliştirici: Mustafa Keskin
+      <p
+        style="margin-top: 8px;"
+        data-i18n="developer">
       </p>
 
     </section>
@@ -498,13 +584,340 @@
 
       <a
         href="https://likabletester-arch.github.io/swipedia-privacy/"
-      >
-        Gizlilik Politikası
+        data-i18n="privacyPolicy">
       </a>
 
     </div>
 
   </footer>
+
+
+  <script>
+
+    const translations = {
+
+      tr: {
+
+        pageTitle:
+          "Hesap Silme Talebi | Swipedia",
+
+        metaDescription:
+          "Swipedia hesabınızın ve hesabınızla ilişkili verilerin silinmesini talep edin.",
+
+        badge:
+          "HESAP VE VERİ YÖNETİMİ",
+
+        heroTitle:
+          "Swipedia hesabınızı silmek mi istiyorsunuz?",
+
+        heroDescription:
+          "Swipedia kullanıcıları hesaplarının ve hesaplarıyla ilişkili kişisel verilerin silinmesini talep edebilir. Aşağıdaki adımları izleyerek hesap silme talebinizi bize iletebilirsiniz.",
+
+
+        requestTitle:
+          "Hesap silme talebi nasıl gönderilir?",
+
+        requestDescription:
+          "Hesabınızın size ait olduğunu doğrulayabilmemiz için talebinizi mümkünse Swipedia hesabınızda kullandığınız e-posta adresinden göndermenizi rica ederiz.",
+
+
+        step1:
+          'Swipedia hesabınızda kullandığınız <strong>e-posta adresinden</strong> bize e-posta gönderin.',
+
+        step2:
+          'E-postanın konu kısmına <strong>“Swipedia Hesap Silme Talebi”</strong> yazın.',
+
+        step3:
+          'Mesajınızda Swipedia <strong>kullanıcı adınızı</strong> belirtin.',
+
+        step4:
+          "Hesap sahipliği doğrulandıktan sonra hesabınız ve silinmesi gereken ilişkili veriler silme sürecine alınacaktır.",
+
+
+        requestButton:
+          "Hesap Silme Talebi Gönder",
+
+
+        warning:
+          "<strong>Önemli:</strong> Güvenliğiniz için e-posta içerisinde Swipedia şifrenizi veya başka bir hesabınıza ait şifreleri kesinlikle göndermeyin.",
+
+
+        dataTitle:
+          "Hangi veriler silinebilir?",
+
+        dataDescription:
+          "Hesap silme işlemi kapsamında hesabınızla ilişkilendirilen veriler, geçerli yasal veya güvenlik amaçlı saklama yükümlülükleri bulunmadığı ölçüde silinebilir.",
+
+        data1:
+          "Hesap ve profil bilgileri",
+
+        data2:
+          "Kullanıcı hesabı tanımlayıcıları",
+
+        data3:
+          "Kullanıcı tarafından oluşturulan içerikler",
+
+        data4:
+          "Hesapla ilişkilendirilen diğer kullanıcı verileri",
+
+
+        contactTitle:
+          "İletişim",
+
+        contactDescription:
+          "Hesap veya veri silme işlemi hakkında sorularınız için bizimle iletişime geçebilirsiniz:",
+
+        developer:
+          "Geliştirici: Mustafa Keskin",
+
+        privacyPolicy:
+          "Gizlilik Politikası",
+
+        emailSubject:
+          "Swipedia Hesap Silme Talebi"
+      },
+
+
+      en: {
+
+        pageTitle:
+          "Account Deletion Request | Swipedia",
+
+        metaDescription:
+          "Request the deletion of your Swipedia account and the data associated with your account.",
+
+        badge:
+          "ACCOUNT & DATA MANAGEMENT",
+
+        heroTitle:
+          "Want to delete your Swipedia account?",
+
+        heroDescription:
+          "Swipedia users may request the deletion of their accounts and personal data associated with those accounts. Follow the steps below to submit an account deletion request.",
+
+
+        requestTitle:
+          "How do I submit an account deletion request?",
+
+        requestDescription:
+          "To help us verify that the account belongs to you, please send your request from the email address associated with your Swipedia account whenever possible.",
+
+
+        step1:
+          'Send us an email from the <strong>email address associated with your Swipedia account</strong>.',
+
+        step2:
+          'Use <strong>“Swipedia Account Deletion Request”</strong> as the subject of your email.',
+
+        step3:
+          'Include your Swipedia <strong>username</strong> in your message.',
+
+        step4:
+          "After account ownership has been verified, your account and associated data that is eligible for deletion will be processed for deletion.",
+
+
+        requestButton:
+          "Send Account Deletion Request",
+
+
+        warning:
+          "<strong>Important:</strong> For your security, never include your Swipedia password or passwords for any other account in your email.",
+
+
+        dataTitle:
+          "What data may be deleted?",
+
+        dataDescription:
+          "As part of the account deletion process, data associated with your account may be deleted unless it must be retained for applicable legal, security, or other legitimate requirements.",
+
+        data1:
+          "Account and profile information",
+
+        data2:
+          "User account identifiers",
+
+        data3:
+          "User-generated content",
+
+        data4:
+          "Other user data associated with the account",
+
+
+        contactTitle:
+          "Contact",
+
+        contactDescription:
+          "If you have questions about account or data deletion, you may contact us at:",
+
+        developer:
+          "Developer: Mustafa Keskin",
+
+        privacyPolicy:
+          "Privacy Policy",
+
+        emailSubject:
+          "Swipedia Account Deletion Request"
+      }
+    };
+
+
+    function setLanguage(language) {
+
+      if (!translations[language]) {
+        language = "en";
+      }
+
+      const t =
+        translations[language];
+
+
+      document.documentElement.lang =
+        language;
+
+
+      document.title =
+        t.pageTitle;
+
+
+      const metaDescription =
+        document.getElementById(
+          "metaDescription"
+        );
+
+      if (metaDescription) {
+
+        metaDescription.setAttribute(
+          "content",
+          t.metaDescription
+        );
+
+      }
+
+
+      document
+        .querySelectorAll("[data-i18n]")
+        .forEach(element => {
+
+          const key =
+            element.getAttribute(
+              "data-i18n"
+            );
+
+          if (t[key] !== undefined) {
+
+            element.textContent =
+              t[key];
+
+          }
+
+        });
+
+
+      document
+        .querySelectorAll(
+          "[data-i18n-html]"
+        )
+        .forEach(element => {
+
+          const key =
+            element.getAttribute(
+              "data-i18n-html"
+            );
+
+          if (t[key] !== undefined) {
+
+            element.innerHTML =
+              t[key];
+
+          }
+
+        });
+
+
+      document
+        .querySelectorAll(
+          ".lang-button"
+        )
+        .forEach(button => {
+
+          button.classList.toggle(
+            "active",
+            button.dataset.lang === language
+          );
+
+        });
+
+
+      const emailButton =
+        document.getElementById(
+          "deletionEmailButton"
+        );
+
+
+      if (emailButton) {
+
+        emailButton.href =
+          "mailto:likabletester@gmail.com?subject=" +
+          encodeURIComponent(
+            t.emailSubject
+          );
+
+      }
+
+
+      localStorage.setItem(
+        "swipedia-language",
+        language
+      );
+
+    }
+
+
+    function getInitialLanguage() {
+
+      const savedLanguage =
+        localStorage.getItem(
+          "swipedia-language"
+        );
+
+
+      if (
+        savedLanguage === "tr" ||
+        savedLanguage === "en"
+      ) {
+
+        return savedLanguage;
+
+      }
+
+
+      const browserLanguage =
+        navigator.language ||
+        navigator.userLanguage ||
+        "en";
+
+
+      if (
+        browserLanguage
+          .toLowerCase()
+          .startsWith("tr")
+      ) {
+
+        return "tr";
+
+      }
+
+
+      return "en";
+
+    }
+
+
+    setLanguage(
+      getInitialLanguage()
+    );
+
+  </script>
 
 </body>
 </html>
