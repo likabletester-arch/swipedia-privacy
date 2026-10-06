@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Hesap Silme Talebi | Swipedia</title>
+
+  <meta
+    name="description"
+    content="Swipedia hesabınızın ve hesabınızla ilişkili verilerin silinmesini talep edin."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #0d0b0a;
+      --card: #171311;
+      --card-light: #211a17;
+      --border: #332722;
+      --text: #f7f3f1;
+      --muted: #aaa19c;
+      --accent: #ff765f;
+      --accent-hover: #ff8b76;
+      --warning-bg: rgba(255, 118, 95, 0.08);
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(
+          circle at 50% -10%,
+          rgba(255, 118, 95, 0.12),
+          transparent 35%
+        ),
+        var(--bg);
+
+      color: var(--text);
+
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      line-height: 1.7;
+    }
+
+    .container {
+      width: min(900px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 42px 0 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+
+      color: var(--text);
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: linear-gradient(
+        135deg,
+        #ff8a70,
+        #ff6049
+      );
+
+      color: white;
+      font-weight: 900;
+      font-size: 20px;
+
+      box-shadow:
+        0 8px 30px rgba(255, 118, 95, 0.22);
+    }
+
+    main {
+      padding: 35px 0 80px;
+    }
+
+    .hero {
+      margin-bottom: 35px;
+    }
+
+    .badge {
+      display: inline-block;
+
+      padding: 7px 12px;
+      margin-bottom: 18px;
+
+      border: 1px solid rgba(255, 118, 95, 0.25);
+      border-radius: 999px;
+
+      background: rgba(255, 118, 95, 0.08);
+
+      color: var(--accent);
+
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    h1 {
+      max-width: 700px;
+
+      font-size: clamp(36px, 6vw, 58px);
+      line-height: 1.08;
+
+      letter-spacing: -2px;
+
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 720px;
+
+      color: var(--muted);
+
+      font-size: 18px;
+    }
+
+    .card {
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.025),
+          transparent
+        ),
+        var(--card);
+
+      border: 1px solid var(--border);
+      border-radius: 22px;
+
+      padding: 30px;
+
+      margin-top: 22px;
+
+      box-shadow:
+        0 20px 50px rgba(0,0,0,0.20);
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 14px;
+      letter-spacing: -0.4px;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    ol {
+      padding-left: 24px;
+      margin-top: 20px;
+    }
+
+    li {
+      padding-left: 8px;
+      margin-bottom: 17px;
+      color: var(--muted);
+    }
+
+    li strong {
+      color: var(--text);
+    }
+
+    .email {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-top: 25px;
+
+      padding: 15px 22px;
+
+      border-radius: 13px;
+
+      background: var(--accent);
+
+      color: white;
+
+      font-size: 15px;
+      font-weight: 800;
+
+      text-decoration: none;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .button:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    .warning {
+      margin-top: 25px;
+
+      padding: 18px;
+
+      border: 1px solid rgba(255, 118, 95, 0.18);
+      border-radius: 14px;
+
+      background: var(--warning-bg);
+
+      color: #d9ccc7;
+
+      font-size: 14px;
+    }
+
+    .warning strong {
+      color: var(--accent);
+    }
+
+    .data-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+
+      margin-top: 20px;
+    }
+
+    .data-item {
+      padding: 15px;
+
+      border-radius: 13px;
+
+      background: var(--card-light);
+      border: 1px solid var(--border);
+
+      color: #c9bfba;
+
+      font-size: 14px;
+    }
+
+    .data-item::before {
+      content: "✓";
+      color: var(--accent);
+      font-weight: 900;
+      margin-right: 8px;
+    }
+
+    footer {
+      padding: 30px 0 45px;
+
+      border-top: 1px solid var(--border);
+
+      color: #756d69;
+
+      font-size: 13px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 650px) {
+      .container {
+        width: min(100% - 28px, 900px);
+      }
+
+      header {
+        padding-top: 25px;
+      }
+
+      main {
+        padding-top: 25px;
+      }
+
+      .card {
+        padding: 22px;
+        border-radius: 18px;
+      }
+
+      .data-list {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        letter-spacing: -1.3px;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+
+      <a
+        class="brand"
+        href="https://likabletester-arch.github.io/swipedia-privacy/"
+      >
+        <div class="logo">S</div>
+        Swipedia
+      </a>
+
+    </div>
+  </header>
+
+
+  <main class="container">
+
+    <section class="hero">
+
+      <div class="badge">
+        HESAP VE VERİ YÖNETİMİ
+      </div>
+
+      <h1>
+        Swipedia hesabınızı silmek mi istiyorsunuz?
+      </h1>
+
+      <p>
+        Swipedia kullanıcıları hesaplarının ve hesaplarıyla
+        ilişkili kişisel verilerin silinmesini talep edebilir.
+        Aşağıdaki adımları izleyerek hesap silme talebinizi
+        bize iletebilirsiniz.
+      </p>
+
+    </section>
+
+
+    <section class="card">
+
+      <h2>Hesap silme talebi nasıl gönderilir?</h2>
+
+      <p>
+        Hesabınızın size ait olduğunu doğrulayabilmemiz için
+        talebinizi mümkünse Swipedia hesabınızda kullandığınız
+        e-posta adresinden göndermenizi rica ederiz.
+      </p>
+
+      <ol>
+
+        <li>
+          Swipedia hesabınızda kullandığınız
+          <strong>e-posta adresinden</strong>
+          bize e-posta gönderin.
+        </li>
+
+        <li>
+          E-postanın konu kısmına
+          <strong>“Swipedia Hesap Silme Talebi”</strong>
+          yazın.
+        </li>
+
+        <li>
+          Mesajınızda Swipedia
+          <strong>kullanıcı adınızı</strong>
+          belirtin.
+        </li>
+
+        <li>
+          Hesap sahipliği doğrulandıktan sonra
+          hesabınız ve silinmesi gereken ilişkili veriler
+          silme sürecine alınacaktır.
+        </li>
+
+      </ol>
+
+
+      <a
+        class="button"
+        href="mailto:likabletester@gmail.com?subject=Swipedia%20Hesap%20Silme%20Talebi"
+      >
+        Hesap Silme Talebi Gönder
+      </a>
+
+
+      <div class="warning">
+
+        <strong>Önemli:</strong>
+
+        Güvenliğiniz için e-posta içerisinde Swipedia
+        şifrenizi veya başka bir hesabınıza ait şifreleri
+        kesinlikle göndermeyin.
+
+      </div>
+
+    </section>
+
+
+    <section class="card">
+
+      <h2>Hangi veriler silinebilir?</h2>
+
+      <p>
+        Hesap silme işlemi kapsamında hesabınızla
+        ilişkilendirilen veriler, geçerli yasal veya güvenlik
+        amaçlı saklama yükümlülükleri bulunmadığı ölçüde
+        silinebilir.
+      </p>
+
+
+      <div class="data-list">
+
+        <div class="data-item">
+          Hesap ve profil bilgileri
+        </div>
+
+        <div class="data-item">
+          Kullanıcı hesabı tanımlayıcıları
+        </div>
+
+        <div class="data-item">
+          Kullanıcı tarafından oluşturulan içerikler
+        </div>
+
+        <div class="data-item">
+          Hesapla ilişkilendirilen diğer kullanıcı verileri
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="card">
+
+      <h2>İletişim</h2>
+
+      <p>
+        Hesap veya veri silme işlemi hakkında sorularınız
+        için bizimle iletişime geçebilirsiniz:
+      </p>
+
+      <p style="margin-top: 12px;">
+        <span class="email">
+          likabletester@gmail.com
+        </span>
+      </p>
+
+      <p style="margin-top: 8px;">
+        Geliştirici: Mustafa Keskin
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <div class="container footer-content">
+
+      <span>
+        © 2026 Swipedia
+      </span>
+
+      <a
+        href="https://likabletester-arch.github.io/swipedia-privacy/"
+      >
+        Gizlilik Politikası
+      </a>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
